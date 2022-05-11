@@ -1,0 +1,6 @@
+Nathan Crozier
+40048644
+
+Phase (i): I have opted to use synchronized() blocks to ensure that the critical section within the methods deposit(), withdraw(), and query() are protected. Synchronizing the method itself still caused inconsistent results, whereas synchronizing the critical sections themselves achieved the desired result.
+
+Phase(ii): The semaphores allowed the program to run faster than when busy-waiting was used. This is because we are no longer wasting CPU cycles on yielding threads. While the semaphores are certainly a bit faster, the results are not particularly impressive. However, if this program were to be scaled up to include many more transactions I believe we would start to see much clearer advantages for semaphores.
